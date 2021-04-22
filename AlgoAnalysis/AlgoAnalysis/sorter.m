@@ -19,10 +19,34 @@
     return self;
 }
 
+//N^2
+-(NSMutableArray *)insertionSort : (NSMutableArray *) arr{
+    for(int beginUnsort = 1; beginUnsort < [arr count]; beginUnsort++){
+        int curIndex = beginUnsort - 1;
+        int value = [arr[beginUnsort] intValue];
+        while(curIndex >= 0 && value < [arr[curIndex] intValue]){
+            arr[curIndex + 1] = arr[curIndex];
+            curIndex--;
+        }
+        arr[curIndex + 1] = [NSNumber numberWithInt:value];
+    }
+    return arr;
+}
 
-
--(void)insertionSort:(NSMutableArray *)array {
-   
+//N^2
+-(NSMutableArray *)selectionSort : (NSMutableArray *) arr{
+    for(int curIndex = 0; curIndex < [arr count]; curIndex++){
+        int smallestIndex = curIndex;
+        for(int i = smallestIndex; i < [arr count]; i++){
+            if(arr[smallestIndex] > arr[i]){
+                smallestIndex = i;
+            }
+        }
+        NSNumber *temp = arr[curIndex];
+        arr[curIndex] = arr[smallestIndex];
+        arr[smallestIndex] = temp;
+    }
+    return arr;
 }
 
 -(NSArray *)mergeSort:(NSArray *)unsortedArray {
@@ -64,6 +88,8 @@
   newLeft = [result arrayByAddingObjectsFromArray:newLeft];
   return [newLeft arrayByAddingObjectsFromArray:newRight];
 }
+
+
 
 
 
