@@ -14,16 +14,16 @@
 -(instancetype)init;
 
 //insertion sort algo
--(void)insertionSort;
+-(void)insertionSort:(NSMutableArray *)array;
 
 //selection sort algo
--(void)selectionSort;
+-(void)selectionSort:(NSMutableArray *)array;
 
 //merge sort
--(void)mergeSort;
+-(NSArray *)mergeSort:(NSArray *)unsortedArray ;
 
 //quick sort
--(void)quickSort;
+-(void)quickSort:(NSMutableArray *)array;
 
 @end
 
