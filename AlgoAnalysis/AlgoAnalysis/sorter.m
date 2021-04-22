@@ -21,9 +21,14 @@
 
 
 
--(void)insertionSort {
-    for(int i = 1; i < ; i++) {
-        
+-(void)insertionSort:(int)arr[] {
+    for(int i=1; i < ; i++){
+        id current = array[i];
+        int j = i -1;
+        while(j >= 0 && array[j]>current){
+            [array objectAtIndex:j+1] = [array objectAtIndex:j];
+            j--;
+        }
     }
    
 }

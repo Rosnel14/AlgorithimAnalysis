@@ -14,16 +14,16 @@
 -(instancetype)init;
 
 //insertion sort algo
--(void)insertionSort;
+-(void)insertionSort:(int[] arr);
 
 //selection sort algo
--(void)selectionSort;
+-(void)selectionSort:(int *) arr;
 
 //merge sort
--(void)mergeSort;
+-(void)mergeSort:(int *)arr;
 
 //quick sort
--(void)quickSort;
+-(void)quickSort:(int *)arr;
 
 @end
 
