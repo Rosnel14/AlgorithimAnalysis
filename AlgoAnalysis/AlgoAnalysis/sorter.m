@@ -41,7 +41,7 @@
       return [self merge:[self mergeSort:leftArr] andRight:[self mergeSort:rightArr]]; //go into wrapper
 }
 
-//wrapper method for mergesort * remind Ros to comment this later 
+//wrapper method for mergesort * remind Ros to comment this later
 -(NSArray *)merge:(NSArray *)leftArr andRight:(NSArray *)rightArr
 {
   NSMutableArray *result = [[NSMutableArray alloc]init]; //final sorted arr
@@ -67,7 +67,42 @@
   return [newLeft arrayByAddingObjectsFromArray:newRight];
 }
 
-
+//I've got to make the diagram for this a bit cleaner
+//reminder to comment this afterward and make the drawings nicer -Ros 
+-(NSArray *)quickSort:(NSArray *)unsortedArray{
+    
+    int count = (int)[unsortedArray count];
+        if (count <= 1) {
+            return unsortedArray;
+        }
+     
+        int pivot = [[unsortedArray objectAtIndex: (count/2)] intValue];
+        NSMutableArray *smallerThanArray = [NSMutableArray array];
+        NSMutableArray *largerThanArray = [NSMutableArray array];
+        NSMutableArray *pivotArray = [NSMutableArray array];
+        [pivotArray addObject: @(pivot)];
+     
+        for (int e = 0; e < count; e++) {
+            int num = [[unsortedArray objectAtIndex:e] intValue];
+     
+            if (num < pivot) {
+                [smallerThanArray addObject: @(num)];
+            } else if (num > pivot) {
+                [largerThanArray addObject: @(num)];
+                // To address the possibly duplicate that is defined in the pivot
+            } else if (e != (count/2) && pivot == num) {
+                [pivotArray addObject: @(num)];
+            }
+        }
+     
+        NSMutableArray *returnArray = [NSMutableArray array];
+        [returnArray addObjectsFromArray: [self quickSort: smallerThanArray]];
+        [returnArray addObjectsFromArray: pivotArray];
+        [returnArray addObjectsFromArray: [self quickSort: largerThanArray]];
+     
+        return returnArray;
+    
+}
 
 
 @end

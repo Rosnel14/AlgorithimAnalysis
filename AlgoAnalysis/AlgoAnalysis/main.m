@@ -15,13 +15,19 @@ int main(int argc, const char * argv[]) {
         //unsortedArray is 4,2,6,5,3,9
         sorter * testSorter = [[sorter alloc] init];
         NSArray * testArr = [[NSArray alloc] initWithObjects:@4,@2,@6,@5,@3,@9, nil];
-        NSArray * sortedArr = [[NSArray alloc] init];
-       sortedArr = [testSorter mergeSort:testArr];
+        NSArray * sortedArr1 = [[NSArray alloc] init];
+        NSArray * sortedArr2 = [[NSArray alloc] init];
+        sortedArr2= [testSorter quickSort:testArr];
+       sortedArr1 = [testSorter mergeSort:testArr];
        // [testSorter insertionSort:testArr];
         
-        for(int i=0; i<[sortedArr count]; i++){
-            NSLog(@"%@",[sortedArr objectAtIndex:i]);
-        }
+//        for(int i=0; i<[sortedArr1 count]; i++){
+//            NSLog(@"Merge sort: %@",[sortedArr1 objectAtIndex:i]);
+//        }
+                for(int i=0; i<[sortedArr2 count]; i++){
+                    NSLog(@"quick sort: %@",[sortedArr2 objectAtIndex:i]);
+                }
+        
 
     }
     return 0;
