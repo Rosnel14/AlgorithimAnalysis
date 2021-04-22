@@ -27,22 +27,24 @@
 
 -(NSArray *)mergeSort:(NSArray *)unsortedArray {
  
-    //unsortedArray is 4,2,6,5,3,9
+    //kinda assuming if its just two items, it's already sorted
      if ([unsortedArray count] < 2)
     {
        return unsortedArray;
     }
+    //we've got to split the array in the mid
       int middle = (int)([unsortedArray count]/2);
       NSRange left = NSMakeRange(0, middle);
       NSRange right = NSMakeRange(middle, ([unsortedArray count] - middle));
-      NSArray *rightArr = [unsortedArray subarrayWithRange:right];
-      NSArray *leftArr = [unsortedArray subarrayWithRange:left];
-      return [self merge:[self mergeSort:leftArr] andRight:[self mergeSort:rightArr]];
+      NSArray *rightArr = [unsortedArray subarrayWithRange:right]; //right side arr
+      NSArray *leftArr = [unsortedArray subarrayWithRange:left]; //left side arr
+      return [self merge:[self mergeSort:leftArr] andRight:[self mergeSort:rightArr]]; //go into wrapper
 }
 
+//wrapper method for mergesort * remind Ros to comment this later 
 -(NSArray *)merge:(NSArray *)leftArr andRight:(NSArray *)rightArr
 {
-  NSMutableArray *result = [[NSMutableArray alloc]init];
+  NSMutableArray *result = [[NSMutableArray alloc]init]; //final sorted arr
   int right = 0;
   int left = 0;
 

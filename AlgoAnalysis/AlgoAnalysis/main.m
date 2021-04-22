@@ -12,9 +12,9 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
 //        NSMutableArray * testArr = [[NSMutableArray alloc] initWithObjects:@1,@3,@2,@4, nil];
-//
+        //unsortedArray is 4,2,6,5,3,9
         sorter * testSorter = [[sorter alloc] init];
-        NSArray * testArr = [[NSArray alloc] initWithObjects:@1,@3,@2,@4,nil];
+        NSArray * testArr = [[NSArray alloc] initWithObjects:@4,@2,@6,@5,@3,@9, nil];
         NSArray * sortedArr = [[NSArray alloc] init];
        sortedArr = [testSorter mergeSort:testArr];
        // [testSorter insertionSort:testArr];
