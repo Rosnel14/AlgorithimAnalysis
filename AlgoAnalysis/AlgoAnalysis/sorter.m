@@ -129,6 +129,31 @@
 }
 
 
+/**
+  * When given jumbled or discending ordered array of integers, following bubble sort method will give you
+  * an array ordered in ascending order.
+  */
+ -(NSArray *) bubbleSort:(NSArray *) arrayToBeSorted {
+     // As we can't swap integers in a static array, make a mutable array out of the given static array.
+     NSMutableArray *muArrRaw = [[NSMutableArray alloc] initWithArray:arrayToBeSorted];
 
+     // iterate through the array as rounds
+     for (int i = 0; i < [muArrRaw count]; i++) {
+         // iterate through each element of the array with the given range
+         for (int j = 0; j < [muArrRaw count] - i; j++) {
+             // comparison
+             if (j < ([muArrRaw count] - 1) && [[muArrRaw objectAtIndex:j] intValue] > [[muArrRaw objectAtIndex:(j + 1)] intValue]) {
+                 int temp = [[muArrRaw objectAtIndex:j] intValue];   // taken the value to be swapped first
+
+                 // then do the swapping
+                 [muArrRaw replaceObjectAtIndex:j withObject:[muArrRaw objectAtIndex:(j + 1)]];
+                 [muArrRaw replaceObjectAtIndex:(j + 1) withObject:[NSNumber numberWithInt:temp]];
+             }
+         }
+     }
+
+     // return the sorted array
+     return [muArrRaw mutableCopy];
+ }
 
 @end
