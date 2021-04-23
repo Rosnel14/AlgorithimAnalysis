@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
         NSArray * sortedArr2 = [[NSArray alloc] init];
         NSMutableArray * sortedArr3 = [[NSMutableArray alloc]init];
         NSMutableArray * sortedArr4 = [[NSMutableArray alloc]init];
-        sortedArr2= [testSorter quickSort:testArr];
+        sortedArr2 = [testSorter quickSort:testArr];
         sortedArr1 = [testSorter mergeSort:testArr];
         sortedArr3 = [testSorter insertionSort:testArr];
         sortedArr4 = [testSorter selectionSort:testArr];
