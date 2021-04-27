@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98BCF1162636F4A000D1D155 /* StackArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BCF1152636F4A000D1D155 /* StackArray.m */; };
+		98BCF11C2636F54B00D1D155 /* ListNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BCF11B2636F54B00D1D155 /* ListNode.m */; };
+		98BCF1212636F5BC00D1D155 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BCF1202636F5BC00D1D155 /* Stack.m */; };
 		D613C7C72631258F00047871 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D613C7C62631258F00047871 /* main.m */; };
 		D613C7D02631278500047871 /* sorter.m in Sources */ = {isa = PBXBuildFile; fileRef = D613C7CF2631278500047871 /* sorter.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +27,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		98BCF1142636F48500D1D155 /* StackArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackArray.h; sourceTree = "<group>"; };
+		98BCF1152636F4A000D1D155 /* StackArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackArray.m; sourceTree = "<group>"; };
+		98BCF11A2636F53600D1D155 /* ListNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListNode.h; sourceTree = "<group>"; };
+		98BCF11B2636F54B00D1D155 /* ListNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListNode.m; sourceTree = "<group>"; };
+		98BCF11F2636F5B300D1D155 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		98BCF1202636F5BC00D1D155 /* Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		D613C7C32631258F00047871 /* AlgoAnalysis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgoAnalysis; sourceTree = BUILT_PRODUCTS_DIR; };
 		D613C7C62631258F00047871 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D613C7CE2631277400047871 /* sorter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sorter.h; sourceTree = "<group>"; };
@@ -62,6 +71,12 @@
 			children = (
 				D613C7C62631258F00047871 /* main.m */,
 				D613C7CE2631277400047871 /* sorter.h */,
+				98BCF1142636F48500D1D155 /* StackArray.h */,
+				98BCF1152636F4A000D1D155 /* StackArray.m */,
+				98BCF11A2636F53600D1D155 /* ListNode.h */,
+				98BCF11B2636F54B00D1D155 /* ListNode.m */,
+				98BCF11F2636F5B300D1D155 /* Stack.h */,
+				98BCF1202636F5BC00D1D155 /* Stack.m */,
 				D613C7CF2631278500047871 /* sorter.m */,
 			);
 			path = AlgoAnalysis;
@@ -123,8 +138,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98BCF1162636F4A000D1D155 /* StackArray.m in Sources */,
 				D613C7D02631278500047871 /* sorter.m in Sources */,
 				D613C7C72631258F00047871 /* main.m in Sources */,
+				98BCF1212636F5BC00D1D155 /* Stack.m in Sources */,
+				98BCF11C2636F54B00D1D155 /* ListNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
