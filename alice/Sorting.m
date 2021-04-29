@@ -51,18 +51,73 @@
     return arr;
 }
 
-+(int *)mergeSort : (int *) arr{
-    
++(int *)mergeSort : (int *) arr withSize: (int) size{
+    //it is sorted if there is only one element
+    if(size <= 1){
+        return arr;
+    }
+    //we've got to split the array in the middle
+    int middle = size/2;
+    int* right = &arr[middle];
+    return [self mergeWithLeftArray:[self mergeSort:arr withSize:middle] ofSize:middle andRightArray:[self mergeSort:right withSize:(size - middle)] ofSize:(size - middle)];//go into wrapper
+}
+
++(int *)mergeWithLeftArray : (int *) arr1 ofSize: (int) size1 andRightArray: (int *) arr2 ofSize: (int) size2{
+    int index1 = 0;
+    int index2 = 0;
+    int indexNew = 0;
+    int * newArr = malloc((size1 + size2) * sizeof(int));
+    while(index1 < size1 && index2 < size2){
+        if(arr1[index1] <= arr2[index2]){
+            newArr[indexNew] = arr1[index1];
+            index1++;
+        }else{
+            newArr[indexNew] = arr2[index2];
+            index2++;
+        }
+        indexNew++;
+    }
+    while(index1 < size1){
+        newArr[indexNew] = arr1[index1];
+        index1++;
+        indexNew++;
+    }
+    while(index2 < size2){
+        newArr[indexNew] = arr2[index2];
+        index2++;
+        indexNew++;
+    }
+    return newArr;
+}
+
++(int *)quickSort : (int *) arr withStart : (int) start andEnd : (int) end{
+    if(start < end){
+        int pivotPoint = [self pivotAroundLast:arr withStart:start andEnd:end];
+        
+        [self quickSort:arr withStart:start andEnd:pivotPoint-1];
+        [self quickSort:arr withStart:pivotPoint+1 andEnd:end];
+    }
     return arr;
 }
 
-+(int *)mergeSortHelper : (int *) arr1 : (int *) arr2{
-    return arr1;
++(int)pivotAroundLast : (int *) arr withStart : (int) start andEnd : (int) end{
+    int pivot = arr[end];
+    int index = start - 1;
+    
+    for(int i = start; i <= end - 1; i++){
+        if(arr[i] < pivot){
+            index++;
+            [self swap: &arr[i] : &arr[index]];
+        }
+    }
+    [self swap: &arr[index+1] : &arr[end]];
+    return ++index;
 }
 
-+(int *)quickSort : (int *) arr{
-    
-    return arr;
++(void)swap : (int *) a : (int *) b{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 //O(n+k)
@@ -145,8 +200,28 @@
     return max;
 }
 
-+(int)birthdayProblem : (int) n{
-    
++(double)birthdayProblem{
+    double total = 0;
+    int n = 0;
+    int iterations = 1;
+    printf("Enter n please: ");
+    scanf("%d", &n);
+    printf("Enter number of tests please: ");
+    scanf("%d", &iterations);
+    for(int i = 0; i < iterations; i++){
+        int counter = 0;
+        NSMutableSet *mySet = [[NSMutableSet alloc] init];
+        while(true){
+            NSNumber *new = [NSNumber numberWithInt:arc4random_uniform(n)];
+            if([mySet member:new]){
+                total += counter;
+                break;
+            }
+            [mySet addObject:new];
+            counter++;
+        }
+    }
+    return total/(double)iterations;
 }
 
 @end
