@@ -14,6 +14,7 @@
 -(instancetype)init;
 
 //insertion sort algo
+<<<<<<< HEAD
 -(void)insertionSort:(int[] arr);
 
 //selection sort algo
@@ -24,6 +25,20 @@
 
 //quick sort
 -(void)quickSort:(int *)arr;
+=======
+-(NSMutableArray *)insertionSort:(NSMutableArray *)unsortedArray;
+
+//selection sort algo
+-(NSMutableArray *)selectionSort:(NSMutableArray *)unsortedArray;
+
+//merge sort
+-(NSArray *)mergeSort:(NSArray *)unsortedArray ;
+
+//quick sort
+-(NSArray *)quickSort:(NSArray *)unsortedArray;
+
+
+>>>>>>> ef5a69d70ba58c8ea097d4d211a5ecadf20c0440
 
 @end
 
